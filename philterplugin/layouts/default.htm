@@ -1,0 +1,55 @@
+description = "Default layout"
+
+[session]
+security = "all"
+
+[account]
+paramCode = "code"
+forceSecure = 0
+requirePassword = 0
+==
+<!DOCTYPE html>
+<html>
+    <head>
+	
+        <meta charset="utf-8">
+        <title>October CMS - {{ this.page.title }}</title>
+        <meta name="description" content="{{ this.page.meta_description }}">
+        <meta name="title" content="{{ this.page.meta_title }}">
+        <meta name="author" content="OctoberCMS">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="generator" content="OctoberCMS">
+        <link rel="icon" type="image/png" href="{{ 'assets/images/theme-preview.png'|theme }}">
+        <link href="{{ 'assets/css/vendor/bootstrap.min.css'|theme }}" rel="stylesheet">
+        <link href="{{ 'assets/css/styles.css'|theme }}" rel="stylesheet">
+
+        {% styles %}
+    </head>
+    <body>
+
+        <!-- Header -->
+        <header id="layout-header">
+            {% partial 'header' %}
+        </header>
+
+        <!-- Content -->
+        <section id="layout-content">
+            {% page %}
+        </section>
+
+        <!-- Footer -->
+        <footer id="layout-footer">
+            {% partial 'footer' %}
+        </footer>
+
+        <!-- Scripts -->
+        <script src="{{ 'assets/js/vendor/jquery-3.3.1.min.js'|theme }}"></script>
+        <script src="{{ 'assets/js/vendor/bootstrap.min.js'|theme }}"></script>
+        <script src="{{ 'assets/js/vendor/masonry.min.js'|theme }}"></script>
+        <script src="{{ 'assets/js/vendor/modernizr-3.6.0.min.js'|theme }}"></script>
+        <script src="{{ 'assets/js/main.js'|theme }}"></script>
+        {% framework extras %}
+        {% scripts %}
+
+    </body>
+</html>
